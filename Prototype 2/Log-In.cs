@@ -33,9 +33,11 @@ namespace Prototype_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.richTextBox1.Text == "admin" && this.richTextBox2.Text == "password")
+            if (this.richTextBox1.Text == admin_username && this.richTextBox2.Text == admin_password)
             {
-
+                Order order = new Order();
+                order.Show();
+                this.Hide();
             }
         }
 

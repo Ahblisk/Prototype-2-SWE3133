@@ -34,7 +34,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +59,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(243)))));
-            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.richTextBox2);
             this.panel2.Controls.Add(this.richTextBox1);
@@ -72,7 +70,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(27)))), ((int)(((byte)(6)))));
-            this.button1.Font = new System.Drawing.Font("Mops", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(1087, 392);
             this.button1.Name = "button1";
@@ -90,6 +88,7 @@
             this.richTextBox2.Size = new System.Drawing.Size(372, 41);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "Password...";
+            this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // richTextBox1
             // 
@@ -104,26 +103,18 @@
             this.richTextBox1.WordWrap = false;
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1087, 242);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 21);
-            this.textBox1.TabIndex = 4;
-            // 
             // login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 902);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Mops", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Name = "login";
             this.Text = "Mom & Pop Pizza Shop";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +127,5 @@
         private RichTextBox richTextBox1;
         private Button button1;
         private RichTextBox richTextBox2;
-        private TextBox textBox1;
     }
 }

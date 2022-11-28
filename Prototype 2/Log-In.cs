@@ -12,6 +12,10 @@ namespace Prototype_2
 
     public partial class login : Form
     {
+        // basic log in functionality
+        string admin_username = "admin";
+        string admin_password = "password";
+
         public login()
         {
             InitializeComponent();
@@ -28,6 +32,14 @@ namespace Prototype_2
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.richTextBox1.Text == "admin" && this.richTextBox2.Text == "password")
+            {
+
+            }
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Prototype_2
 {
-    public partial class Menu : Form
+    public partial class Order : Form
     {
-        public Menu()
+        public Order()
         {
             InitializeComponent();
+        }
+
+        private void Order_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

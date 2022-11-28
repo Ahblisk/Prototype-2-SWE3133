@@ -12,9 +12,25 @@ namespace Prototype_2
 {
     public partial class Order : Form
     {
+        public enum Toppings
+        {
+            Cheese,
+            Pepperoni,
+            Sausage,
+            Ham,
+            GreenPepper,
+            Onion,
+            Tomato,
+            Mushroom,
+            Pineapple
+        }
+
+        Toppings[] toppings = new Toppings[9]; ///cheese and 8 other toppings options
+
         public Order()
         {
             InitializeComponent();
+
         }
 
         private void Order_Load(object sender, EventArgs e)

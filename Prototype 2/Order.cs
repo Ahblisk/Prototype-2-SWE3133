@@ -120,6 +120,22 @@ namespace Prototype_2
 
         private void ToCheckout_Click(object sender, EventArgs e)
         {
+            double subtotal = 0;
+            double taxrate = .08;
+            double taxprice = 0;
+            double total = 0;
+
+            foreach (ListViewItem item in chk.CheckoutListView.Items)
+            {
+                subtotal += Convert.ToDouble(item.SubItems[2].Text);
+            }
+            taxprice = subtotal * taxrate;
+            total = subtotal + taxprice;
+
+            chk.SubtotalLabel.Text = subtotal.ToString();
+            chk.TaxLabel.Text = taxprice.ToString();
+            chk.TotalLabel.Text = total.ToString();
+
             chk.Show();
             this.Hide();
         }

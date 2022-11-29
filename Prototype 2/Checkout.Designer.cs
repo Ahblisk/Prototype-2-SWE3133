@@ -152,10 +152,10 @@
         private ColumnHeader Description;
         private ColumnHeader Price;
         private Label label1;
-        private Label SubtotalLabel;
+        internal Label SubtotalLabel;
         private Label label3;
-        private Label TaxLabel;
+        internal Label TaxLabel;
         private Label label5;
-        private Label TotalLabel;
+        internal Label TotalLabel;
     }
 }

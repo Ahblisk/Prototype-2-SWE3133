@@ -37,6 +37,9 @@
             this.DrinkChoiceListBox = new System.Windows.Forms.ListBox();
             this.DrinkSizeListBox = new System.Windows.Forms.ListBox();
             this.Sides_Tab = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.ReceiptListView = new System.Windows.Forms.ListView();
             this.Item = new System.Windows.Forms.ColumnHeader();
             this.Description = new System.Windows.Forms.ColumnHeader();
@@ -46,6 +49,7 @@
             this.MenuTabCtrl.SuspendLayout();
             this.Pizza_Tab.SuspendLayout();
             this.Drinks_Tab.SuspendLayout();
+            this.Sides_Tab.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuTabCtrl
@@ -53,11 +57,12 @@
             this.MenuTabCtrl.Controls.Add(this.Pizza_Tab);
             this.MenuTabCtrl.Controls.Add(this.Drinks_Tab);
             this.MenuTabCtrl.Controls.Add(this.Sides_Tab);
-            this.MenuTabCtrl.Location = new System.Drawing.Point(11, 12);
+            this.MenuTabCtrl.Location = new System.Drawing.Point(10, 9);
+            this.MenuTabCtrl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MenuTabCtrl.Name = "MenuTabCtrl";
             this.MenuTabCtrl.Padding = new System.Drawing.Point(50, 25);
             this.MenuTabCtrl.SelectedIndex = 0;
-            this.MenuTabCtrl.Size = new System.Drawing.Size(581, 333);
+            this.MenuTabCtrl.Size = new System.Drawing.Size(508, 250);
             this.MenuTabCtrl.TabIndex = 0;
             // 
             // Pizza_Tab
@@ -65,10 +70,11 @@
             this.Pizza_Tab.Controls.Add(this.PizzaToppingsListBox);
             this.Pizza_Tab.Controls.Add(this.PizzaCrustListBox);
             this.Pizza_Tab.Controls.Add(this.PizzaSizeListBox);
-            this.Pizza_Tab.Location = new System.Drawing.Point(4, 73);
+            this.Pizza_Tab.Location = new System.Drawing.Point(4, 68);
+            this.Pizza_Tab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pizza_Tab.Name = "Pizza_Tab";
-            this.Pizza_Tab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Pizza_Tab.Size = new System.Drawing.Size(573, 256);
+            this.Pizza_Tab.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pizza_Tab.Size = new System.Drawing.Size(500, 178);
             this.Pizza_Tab.TabIndex = 0;
             this.Pizza_Tab.Text = "Pizza";
             this.Pizza_Tab.UseVisualStyleBackColor = true;
@@ -87,50 +93,50 @@
             "Tomato",
             "Mushroom",
             "Pineapple"});
-            this.PizzaToppingsListBox.Location = new System.Drawing.Point(248, 24);
-            this.PizzaToppingsListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PizzaToppingsListBox.Location = new System.Drawing.Point(217, 18);
             this.PizzaToppingsListBox.MultiColumn = true;
             this.PizzaToppingsListBox.Name = "PizzaToppingsListBox";
-            this.PizzaToppingsListBox.Size = new System.Drawing.Size(302, 114);
+            this.PizzaToppingsListBox.Size = new System.Drawing.Size(265, 76);
             this.PizzaToppingsListBox.TabIndex = 5;
+            this.PizzaToppingsListBox.SelectedIndexChanged += new System.EventHandler(this.PizzaToppingsListBox_SelectedIndexChanged);
+            this.PizzaToppingsListBox.ItemCheck += PizzaToppingsListBox_ItemCheck;
             // 
             // PizzaCrustListBox
             // 
             this.PizzaCrustListBox.FormattingEnabled = true;
-            this.PizzaCrustListBox.ItemHeight = 20;
+            this.PizzaCrustListBox.ItemHeight = 15;
             this.PizzaCrustListBox.Items.AddRange(new object[] {
             "Thin",
             "Regular",
             "Pan"});
-            this.PizzaCrustListBox.Location = new System.Drawing.Point(134, 24);
-            this.PizzaCrustListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PizzaCrustListBox.Location = new System.Drawing.Point(117, 18);
             this.PizzaCrustListBox.Name = "PizzaCrustListBox";
-            this.PizzaCrustListBox.Size = new System.Drawing.Size(107, 84);
+            this.PizzaCrustListBox.Size = new System.Drawing.Size(94, 64);
             this.PizzaCrustListBox.TabIndex = 4;
             // 
             // PizzaSizeListBox
             // 
             this.PizzaSizeListBox.FormattingEnabled = true;
-            this.PizzaSizeListBox.ItemHeight = 20;
+            this.PizzaSizeListBox.ItemHeight = 15;
             this.PizzaSizeListBox.Items.AddRange(new object[] {
             "Small",
             "Medium",
             "Large",
             "Extra Large"});
-            this.PizzaSizeListBox.Location = new System.Drawing.Point(7, 24);
-            this.PizzaSizeListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PizzaSizeListBox.Location = new System.Drawing.Point(6, 18);
             this.PizzaSizeListBox.Name = "PizzaSizeListBox";
-            this.PizzaSizeListBox.Size = new System.Drawing.Size(119, 84);
+            this.PizzaSizeListBox.Size = new System.Drawing.Size(105, 64);
             this.PizzaSizeListBox.TabIndex = 3;
             // 
             // Drinks_Tab
             // 
             this.Drinks_Tab.Controls.Add(this.DrinkChoiceListBox);
             this.Drinks_Tab.Controls.Add(this.DrinkSizeListBox);
-            this.Drinks_Tab.Location = new System.Drawing.Point(4, 73);
+            this.Drinks_Tab.Location = new System.Drawing.Point(4, 68);
+            this.Drinks_Tab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Drinks_Tab.Name = "Drinks_Tab";
-            this.Drinks_Tab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Drinks_Tab.Size = new System.Drawing.Size(573, 256);
+            this.Drinks_Tab.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Drinks_Tab.Size = new System.Drawing.Size(500, 178);
             this.Drinks_Tab.TabIndex = 1;
             this.Drinks_Tab.Text = "Drinks";
             this.Drinks_Tab.UseVisualStyleBackColor = true;
@@ -138,7 +144,7 @@
             // DrinkChoiceListBox
             // 
             this.DrinkChoiceListBox.FormattingEnabled = true;
-            this.DrinkChoiceListBox.ItemHeight = 20;
+            this.DrinkChoiceListBox.ItemHeight = 15;
             this.DrinkChoiceListBox.Items.AddRange(new object[] {
             "Diet Orange",
             "Diet Pepsi",
@@ -148,38 +154,70 @@
             "Pepsi",
             "Root Beer",
             "Sierra Mist"});
-            this.DrinkChoiceListBox.Location = new System.Drawing.Point(295, 7);
-            this.DrinkChoiceListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DrinkChoiceListBox.Location = new System.Drawing.Point(258, 5);
             this.DrinkChoiceListBox.MultiColumn = true;
             this.DrinkChoiceListBox.Name = "DrinkChoiceListBox";
-            this.DrinkChoiceListBox.Size = new System.Drawing.Size(237, 124);
+            this.DrinkChoiceListBox.Size = new System.Drawing.Size(208, 94);
             this.DrinkChoiceListBox.TabIndex = 3;
             this.DrinkChoiceListBox.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // DrinkSizeListBox
             // 
             this.DrinkSizeListBox.FormattingEnabled = true;
-            this.DrinkSizeListBox.ItemHeight = 20;
+            this.DrinkSizeListBox.ItemHeight = 15;
             this.DrinkSizeListBox.Items.AddRange(new object[] {
             "Small",
             "Medium",
             "Large"});
-            this.DrinkSizeListBox.Location = new System.Drawing.Point(18, 35);
-            this.DrinkSizeListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DrinkSizeListBox.Location = new System.Drawing.Point(16, 26);
             this.DrinkSizeListBox.Name = "DrinkSizeListBox";
-            this.DrinkSizeListBox.Size = new System.Drawing.Size(231, 64);
+            this.DrinkSizeListBox.Size = new System.Drawing.Size(203, 49);
             this.DrinkSizeListBox.TabIndex = 2;
             this.DrinkSizeListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Sides_Tab
             // 
-            this.Sides_Tab.Location = new System.Drawing.Point(4, 73);
+            this.Sides_Tab.Controls.Add(this.button4);
+            this.Sides_Tab.Controls.Add(this.button2);
+            this.Sides_Tab.Controls.Add(this.button1);
+            this.Sides_Tab.Location = new System.Drawing.Point(4, 68);
+            this.Sides_Tab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Sides_Tab.Name = "Sides_Tab";
-            this.Sides_Tab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Sides_Tab.Size = new System.Drawing.Size(573, 256);
+            this.Sides_Tab.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Sides_Tab.Size = new System.Drawing.Size(500, 178);
             this.Sides_Tab.TabIndex = 2;
             this.Sides_Tab.Text = "Sides";
             this.Sides_Tab.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(3, 90);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(248, 88);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Big Chocolate Chip Cookie $4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(252, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(248, 88);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Add Side Breadstick Bites $2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(248, 88);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Add Side Breadsticks $4";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ReceiptListView
             // 
@@ -191,11 +229,10 @@
             this.ReceiptListView.FullRowSelect = true;
             this.ReceiptListView.GridLines = true;
             this.ReceiptListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.ReceiptListView.Location = new System.Drawing.Point(597, 101);
-            this.ReceiptListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ReceiptListView.Location = new System.Drawing.Point(522, 76);
             this.ReceiptListView.Name = "ReceiptListView";
             this.ReceiptListView.ShowGroups = false;
-            this.ReceiptListView.Size = new System.Drawing.Size(226, 313);
+            this.ReceiptListView.Size = new System.Drawing.Size(198, 236);
             this.ReceiptListView.TabIndex = 1;
             this.ReceiptListView.UseCompatibleStateImageBehavior = false;
             this.ReceiptListView.View = System.Windows.Forms.View.Details;
@@ -221,10 +258,9 @@
             // 
             // AddToOrder
             // 
-            this.AddToOrder.Location = new System.Drawing.Point(11, 352);
-            this.AddToOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddToOrder.Location = new System.Drawing.Point(10, 264);
             this.AddToOrder.Name = "AddToOrder";
-            this.AddToOrder.Size = new System.Drawing.Size(169, 64);
+            this.AddToOrder.Size = new System.Drawing.Size(148, 48);
             this.AddToOrder.TabIndex = 2;
             this.AddToOrder.Text = "Add";
             this.AddToOrder.UseVisualStyleBackColor = true;
@@ -232,10 +268,9 @@
             // 
             // ToCheckout
             // 
-            this.ToCheckout.Location = new System.Drawing.Point(418, 352);
-            this.ToCheckout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ToCheckout.Location = new System.Drawing.Point(366, 264);
             this.ToCheckout.Name = "ToCheckout";
-            this.ToCheckout.Size = new System.Drawing.Size(169, 64);
+            this.ToCheckout.Size = new System.Drawing.Size(148, 48);
             this.ToCheckout.TabIndex = 3;
             this.ToCheckout.Text = "Checkout";
             this.ToCheckout.UseVisualStyleBackColor = true;
@@ -243,15 +278,16 @@
             // 
             // Order
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(837, 433);
+            this.ClientSize = new System.Drawing.Size(732, 325);
             this.Controls.Add(this.ToCheckout);
             this.Controls.Add(this.AddToOrder);
             this.Controls.Add(this.ReceiptListView);
             this.Controls.Add(this.MenuTabCtrl);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Order";
             this.Text = "Menu";
@@ -259,6 +295,7 @@
             this.MenuTabCtrl.ResumeLayout(false);
             this.Pizza_Tab.ResumeLayout(false);
             this.Drinks_Tab.ResumeLayout(false);
+            this.Sides_Tab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -280,5 +317,8 @@
         private CheckedListBox PizzaToppingsListBox;
         private ColumnHeader Description;
         private Button ToCheckout;
+        private Button button4;
+        private Button button2;
+        private Button button1;
     }
 }

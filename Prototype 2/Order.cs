@@ -28,6 +28,7 @@ namespace Prototype_2
 
         Toppings[] toppings = new Toppings[9]; ///cheese and 8 other toppings options
 
+
         public Order()
         {
             InitializeComponent();
@@ -114,10 +115,14 @@ namespace Prototype_2
             //ListViewItem item = new ListViewItem();
         }
 
+        
+
         private void PizzaToppingsListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (e.NewValue == CheckState.Checked && PizzaToppingsListBox.CheckedItems.Count >= 4)
                 e.NewValue = CheckState.Unchecked;
+
+            
         }
 
         private void UpdatePricing()
@@ -143,6 +148,50 @@ namespace Prototype_2
         {
             UpdatePricing();
             chk.Show();
+        }
+
+        private void PizzaToppingsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListViewItem item = new ListViewItem("Breadsticks");
+            ListViewItem chkitem = new ListViewItem("Breadsticks");
+            item.SubItems.Add("N/A");
+            chkitem.SubItems.Add("N/A");
+            item.SubItems.Add("4.00");
+            chkitem.SubItems.Add("4.00");
+            chk.CheckoutListView.Items.Add(chkitem);
+            this.ReceiptListView.Items.Add(item);
+            UpdatePricing();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ListViewItem item = new ListViewItem("Breadstick Bites");
+            ListViewItem chkitem = new ListViewItem("Breadstick Bites");
+            item.SubItems.Add("N/A");
+            chkitem.SubItems.Add("N/A");
+            item.SubItems.Add("2.00");
+            chkitem.SubItems.Add("2.00");
+            chk.CheckoutListView.Items.Add(chkitem);
+            this.ReceiptListView.Items.Add(item);
+            UpdatePricing();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ListViewItem item = new ListViewItem("Chocolate Chip Cookie");
+            ListViewItem chkitem = new ListViewItem("Chocolate Chip Cookie");
+            item.SubItems.Add("Big");
+            chkitem.SubItems.Add("Big");
+            item.SubItems.Add("4.00");
+            chkitem.SubItems.Add("4.00");
+            chk.CheckoutListView.Items.Add(chkitem);
+            this.ReceiptListView.Items.Add(item);
+            UpdatePricing();
         }
     }
 }

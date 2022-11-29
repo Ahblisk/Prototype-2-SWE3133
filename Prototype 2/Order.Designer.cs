@@ -39,9 +39,10 @@
             this.Sides_Tab = new System.Windows.Forms.TabPage();
             this.ReceiptListView = new System.Windows.Forms.ListView();
             this.Item = new System.Windows.Forms.ColumnHeader();
+            this.Description = new System.Windows.Forms.ColumnHeader();
             this.Price = new System.Windows.Forms.ColumnHeader();
-            this.Topping = new System.Windows.Forms.ColumnHeader();
             this.AddToOrder = new System.Windows.Forms.Button();
+            this.ToCheckout = new System.Windows.Forms.Button();
             this.MenuTabCtrl.SuspendLayout();
             this.Pizza_Tab.SuspendLayout();
             this.Drinks_Tab.SuspendLayout();
@@ -183,8 +184,8 @@
             // 
             this.ReceiptListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Item,
-            this.Price,
-            this.Topping});
+            this.Description,
+            this.Price});
             this.ReceiptListView.FullRowSelect = true;
             this.ReceiptListView.GridLines = true;
             this.ReceiptListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -202,15 +203,18 @@
             this.Item.Text = "Item";
             this.Item.Width = 145;
             // 
+            // Description
+            // 
+            this.Description.DisplayIndex = 2;
+            this.Description.Text = "Description";
+            this.Description.Width = 0;
+            // 
             // Price
             // 
+            this.Price.DisplayIndex = 1;
             this.Price.Text = "Price";
             this.Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Price.Width = 50;
-            // 
-            // Topping
-            // 
-            this.Topping.Text = "Toppings";
             // 
             // AddToOrder
             // 
@@ -222,11 +226,24 @@
             this.AddToOrder.UseVisualStyleBackColor = true;
             this.AddToOrder.Click += new System.EventHandler(this.AddToOrder_Click);
             // 
+            // ToCheckout
+            // 
+            this.ToCheckout.Location = new System.Drawing.Point(366, 264);
+            this.ToCheckout.Name = "ToCheckout";
+            this.ToCheckout.Size = new System.Drawing.Size(148, 48);
+            this.ToCheckout.TabIndex = 3;
+            this.ToCheckout.Text = "Checkout";
+            this.ToCheckout.UseVisualStyleBackColor = true;
+            this.ToCheckout.Click += new System.EventHandler(this.ToCheckout_Click);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(732, 325);
+            this.Controls.Add(this.ToCheckout);
             this.Controls.Add(this.AddToOrder);
             this.Controls.Add(this.ReceiptListView);
             this.Controls.Add(this.MenuTabCtrl);
@@ -257,6 +274,7 @@
         private ListBox PizzaCrustListBox;
         private ListBox PizzaSizeListBox;
         private CheckedListBox PizzaToppingsListBox;
-        private ColumnHeader Topping;
+        private ColumnHeader Description;
+        private Button ToCheckout;
     }
 }

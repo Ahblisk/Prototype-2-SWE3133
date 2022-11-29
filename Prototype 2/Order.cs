@@ -12,6 +12,7 @@ namespace Prototype_2
 {
     public partial class Order : Form
     {
+        Checkout chk = new Checkout();
         public enum Toppings
         {
             Cheese,
@@ -66,27 +67,38 @@ namespace Prototype_2
                 case 0:
                     {
                         ListViewItem item = new ListViewItem(PizzaSizeListBox.Text.ToString() + " - " + PizzaCrustListBox.Text.ToString() + " Pizza");
-                        switch (PizzaSizeListBox.SelectedIndex)
-                        {
-                            case 0: item.SubItems.Add("4.00"); break;
-                            case 1: item.SubItems.Add("6.00"); break;
-                            case 2: item.SubItems.Add("8.00"); break;
-                            case 3: item.SubItems.Add("10.00"); break;
-                        }
+                        ListViewItem chkitem = new ListViewItem(PizzaSizeListBox.Text.ToString() + " - " + PizzaCrustListBox.Text.ToString() + " Pizza");
+                        
                         string toppingstring = "";
                         foreach (object t in PizzaToppingsListBox.CheckedItems)
                         {
                             toppingstring += t + " ";
                         }
                         item.SubItems.Add(toppingstring);
-                        this.ReceiptListView.Items.Add(item);
+                        chkitem.SubItems.Add(toppingstring);
+
+
+                        switch (PizzaSizeListBox.SelectedIndex)
+                        {
+                            /* small */case 0: double smallprice = (PizzaToppingsListBox.CheckedItems.Count > 2) ? 4.00 + (.50 * (PizzaToppingsListBox.CheckedItems.Count - 2)) : 4.00;  item.SubItems.Add(smallprice.ToString()); chkitem.SubItems.Add(smallprice.ToString()); break;
+                            /* medium */case 1: double mediumprice = (PizzaToppingsListBox.CheckedItems.Count > 2) ? 6.00 + (.75 * (PizzaToppingsListBox.CheckedItems.Count - 2)) : 6.00;  item.SubItems.Add(mediumprice.ToString()); chkitem.SubItems.Add(mediumprice.ToString()); break;
+                            /* large */case 2: double largeprice = (PizzaToppingsListBox.CheckedItems.Count > 2) ? 8.00 + (1.00 * (PizzaToppingsListBox.CheckedItems.Count - 2)) : 8.00; item.SubItems.Add(largeprice.ToString()); chkitem.SubItems.Add(largeprice.ToString()); break;
+                            /* x-large */case 3: double xlprice = (PizzaToppingsListBox.CheckedItems.Count > 2) ? 10.00 + (1.25 * (PizzaToppingsListBox.CheckedItems.Count - 2)) : 10.00; item.SubItems.Add(xlprice.ToString()); chkitem.SubItems.Add(xlprice.ToString()); break;
+                        }
+                        chk.CheckoutListView.Items.Add(item);
+                        this.ReceiptListView.Items.Add(chkitem);
                         break;
                     }
                 /* Drinks */
                 case 1:
                     {
-                        ListViewItem item = new ListViewItem(DrinkSizeListBox.SelectedItem.ToString() + " - " + DrinkChoiceListBox.SelectedItem.ToString());
+                        ListViewItem item = new ListViewItem(DrinkChoiceListBox.SelectedItem.ToString());
+                        ListViewItem chkitem = new ListViewItem(DrinkChoiceListBox.SelectedItem.ToString());
+                        item.SubItems.Add(DrinkSizeListBox.SelectedItem.ToString());
+                        chkitem.SubItems.Add(DrinkSizeListBox.SelectedItem.ToString());
                         item.SubItems.Add("1.00");
+                        chkitem.SubItems.Add("1.00");
+                        chk.CheckoutListView.Items.Add(chkitem);
                         this.ReceiptListView.Items.Add(item);
                         break;
                     }
@@ -104,6 +116,12 @@ namespace Prototype_2
         {
             if (e.NewValue == CheckState.Checked && PizzaToppingsListBox.CheckedItems.Count >= 4)
                 e.NewValue = CheckState.Unchecked;
+        }
+
+        private void ToCheckout_Click(object sender, EventArgs e)
+        {
+            chk.Show();
+            this.Hide();
         }
     }
 }

@@ -87,6 +87,7 @@ namespace Prototype_2
                         }
                         chk.CheckoutListView.Items.Add(item);
                         this.ReceiptListView.Items.Add(chkitem);
+                        UpdatePricing();
                         break;
                     }
                 /* Drinks */
@@ -100,6 +101,7 @@ namespace Prototype_2
                         chkitem.SubItems.Add("1.00");
                         chk.CheckoutListView.Items.Add(chkitem);
                         this.ReceiptListView.Items.Add(item);
+                        UpdatePricing();
                         break;
                     }
                 /* Sides */
@@ -118,7 +120,7 @@ namespace Prototype_2
                 e.NewValue = CheckState.Unchecked;
         }
 
-        private void ToCheckout_Click(object sender, EventArgs e)
+        private void UpdatePricing()
         {
             double subtotal = 0;
             double taxrate = .08;
@@ -132,12 +134,15 @@ namespace Prototype_2
             taxprice = subtotal * taxrate;
             total = subtotal + taxprice;
 
-            chk.SubtotalLabel.Text = subtotal.ToString();
-            chk.TaxLabel.Text = taxprice.ToString();
-            chk.TotalLabel.Text = total.ToString();
+            chk.SubtotalLabel.Text = "$" + subtotal.ToString();
+            chk.TaxLabel.Text = "$" + taxprice.ToString();
+            chk.TotalLabel.Text = "$" + total.ToString();
+        }
 
+        private void ToCheckout_Click(object sender, EventArgs e)
+        {
+            UpdatePricing();
             chk.Show();
-            this.Hide();
         }
     }
 }

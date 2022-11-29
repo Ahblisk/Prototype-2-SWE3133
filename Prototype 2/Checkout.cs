@@ -13,6 +13,7 @@ namespace Prototype_2
     public partial class Checkout : Form
     {
         
+        
         public Checkout()
         {
             InitializeComponent();
@@ -22,6 +23,11 @@ namespace Prototype_2
         private void CheckoutListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BackToOrderBttn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -35,6 +35,8 @@ namespace Prototype_2
             MessageBox.Show("Your order has been sent!",
                "Mom & Pop's Pizza Shop", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+            DateTime ticketID = DateTime.Now;
+
             System.Xml.XmlTextWriter writer = new System.Xml.XmlTextWriter(Application.StartupPath + "\\Receipt.xml", null);
 
             writer.WriteStartElement("Receipt");
